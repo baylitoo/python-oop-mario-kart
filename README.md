@@ -1,4 +1,4 @@
-# python-oop-mario-kart
+
 # Python 2D Mario Kart Game
 
 Welcome to the Python 2D Mario Kart Game project! This game is a simple, object-oriented implementation of a racing game inspired by the classic Mario Kart series. Developed for an educational purpose, this game serves as an example of applying object-oriented programming concepts in Python, utilizing the Pygame library.
