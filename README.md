@@ -25,22 +25,22 @@ To get started with this game, you will need to have Python installed on your co
 ### Installation
 
 Clone the repository to your local machine:
-\```bash
+``bash
 git clone https://github.com/baylitoo/python-mario-kart.git
-\```
+``
 Navigate to the project directory and install the required packages:
-\```bash
+``bash
 cd python-mario-kart
 pip install -r requirements.txt
-\```
+``
 
 ### Running the Game
 
 To run the game, execute the main script from the terminal:
 
-\```bash
+``bash
 python main.py
-\```
+``
 
 ## Contributing
 
