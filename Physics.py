@@ -32,7 +32,7 @@ class Physics:
         self._yc = 50  # y-coordinate of last checkpoint
         self._θc = 0  # Orientation at last checkpoint
         self._got_into_lava_or_Off_limits= False  # Parameter to check if the kart got into lava or off limits for Respan animation animation
-        self.boost=False  # Parameter to check if the kart is Boosted
+        self.__boost=False  # Parameter to check if the kart is Boosted
         self._Off_L= False # Parameter to check if the kart is off limits
 
 
@@ -43,7 +43,9 @@ class Physics:
         # Adjust the velocity and apply a maximum velocity limit.
 
         # Condition to check if boost is activated
-        if self.boost==True:
+        if self.__boost==True:
+            self._angle += self._angle_velocity
+
             self._velocity = min(self._velocity, 25)
             # Update position based on velocity and angle.
             vx = self._velocity * np.cos(self._angle)
@@ -52,13 +54,10 @@ class Physics:
             # Uptading the x,y positions
             self._x += vx
             self._y += vy
+            self.__boost=False
 
         else:
 
-            #Conditons that helps Reset the angle once it does a 360 degree
-            #if self._angle>=6 or self._angle<=-6:
-                #self._angle=0
-            #else:
             self._angle += self._angle_velocity
 
             self.__acceleration = self._ac - self.__f * self._velocity * np.cos(self._angle_velocity)
@@ -94,8 +93,6 @@ class Physics:
                 self.__finish_line_sound.play()
 
                 self.has_finished = True
-                print(5555)
-
             else:
                 # Update the checkpoint coordinates and angle.
                 self._xc = self._x
@@ -123,6 +120,7 @@ class Physics:
 
     # Boost the kart's velocity on boost surfaces.
     def _physic_boost(self):
+        self.__boost=True
         self._velocity = 25  # Maximize velocity.
         self.__Calculates_New_Positions()  # Update position.
         self.__Boost_sound.play() # Play boost sound

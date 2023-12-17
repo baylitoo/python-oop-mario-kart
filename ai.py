@@ -46,7 +46,6 @@ class AITraining:
         # Initialize the AI training class
         self.__checkpoints_visited = {'C': False, 'D': False, 'E': False, 'F': False}  # Track checkpoints visited
         self.kart = None  # Reference to the kart object
-        self.__Name = "AI"  # Name of the AI controller
         self.__policy_network = policy_network  # Policy network used for decision making
         self.__optimizer = torch.optim.Adam(policy_network.parameters(), lr=0.0001)  # Optimizer for the policy network
         self.__checkpoints_positions = {}  # Stores the positions of checkpoints
@@ -60,10 +59,7 @@ class AITraining:
         self.__epsilon = 0.1  # Initial exploration rate
         self.__decay_rate = 0.99  # Decay rate for exploration
 
-    @property
-    def name(self):
-        # Getter for the AI name
-        return self.__Name
+
 
     def convert_surfaces(self, surfaces):
         # Convert surface types to one-hot encoded vectors

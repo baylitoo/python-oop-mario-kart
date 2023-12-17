@@ -235,12 +235,11 @@ class Kart(Physics):
 
             # Reset the kart, used for IA training
             # self.new_state=self.get_state(track_string)
-            # if self.controller.name=="AI":
-            #     if time.time() - self.__start_time >= 120:
-            #         initial_position = [50, 50]
-            #         initial_angle = 0
-            #         self.controller.train()
-            #         self.reset(initial_position, initial_angle)
+            # if time.time() - self.__start_time >= 120:
+            #          initial_position = [50, 50]
+            #          initial_angle = 0
+            #          self.controller.train()
+            #          self.reset(initial_position, initial_angle)
 
 
 
