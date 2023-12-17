@@ -1,5 +1,8 @@
 from track import Track
+from ai import PolicyNetwork
+from ai import AITraining
 from ai import AI
+
 from human import Human
 from kart import Kart
 
@@ -24,8 +27,8 @@ GGGGGGGGGGGGGGGGGGGGGGGGGG"""
 # La position et l'orientation initiale du kart
 initial_position = [50, 50]
 initial_angle = 0
-
-controller =  Human()  # ou AI()
+policy=PolicyNetwork(35,64,4)
+controller =Human()#AITraining(policy,string)  #Human()  # ou AI()
 """
 ==================== ATTENTION =====================
 Vous ne devez pas modifier ces quatre lignes de code 

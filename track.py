@@ -2,7 +2,7 @@ from grass import Grass
 from checkpoint import Checkpoint
 from boost import Boost
 from lava import Lava
-from road import Road
+from road import Road 
 
 import pygame
 
@@ -115,18 +115,18 @@ class Track(object):
             # Pour chaque caractere on ajoute un object a track_objects
             if c in Track.char_to_track_element.keys():
                 track_element = Track.char_to_track_element[c]
-                track_class = track_element['class']
+                track_class = track_element['class'] 
                 track_params = [x, y] + track_element['params']
                 track_objects.append(track_class(*track_params))
                 x += BLOCK_SIZE
-                width += BLOCK_SIZE
+                width += BLOCK_SIZE 
             elif c == '\n':
                 x = 0
                 y += BLOCK_SIZE
                 width = 0
                 height += BLOCK_SIZE
         height += BLOCK_SIZE
-        return track_objects, width, height
+        return track_objects, width, height 
 
     def play(self):
         """
@@ -151,7 +151,7 @@ class Track(object):
         
         # Boucle while pour le deroulement de la partie
         running = True
-        compteur = 0
+        compteur = 0    
         while running:
 
             # Fermeture de la fenetre
@@ -168,7 +168,7 @@ class Track(object):
 
             for kart in self.karts:
                 # On recupere la commande du joueur (humain ou IA)
-                keys = kart.controller.move(self.string)
+                keys = kart.controller.move(self.string)           
             
                 if keys[pygame.K_UP]:
                     kart.forward()
@@ -195,7 +195,6 @@ class Track(object):
 
             # On met a jour l'affichage de pygame
             pygame.display.flip()
-            
             # On incremente le compteur
             compteur += 1
 
