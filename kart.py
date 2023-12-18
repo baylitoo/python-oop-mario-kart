@@ -147,7 +147,7 @@ class Kart(Physics):
 
 
 
-    # parcours de la chaine de caractère pour trouver le prochain checkpoint , nous pouvons faire mieux exemple recherche dichotomique
+    # parcours de la chaine de caractère pour trouver les checkpoints , nous pouvons faire mieux exemple recherche dichotomique
     # qui commence par la position actuelle du kart
     def __calculate_checkpoints_positions(self, track_string):
         checkpoint_id_map = {'C': 0, 'D': 1, 'E': 2, 'F': 3}
