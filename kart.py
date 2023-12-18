@@ -183,6 +183,8 @@ class Kart(Physics):
     # Method that updates the positions of the kart based on the surface it is on and the commands F, B, L, R
     def update_position(self, track_string, screen):
 
+
+        # For fixing then karts for the first 3 seconds of the game (Delete if predefined test are used)
         current_time = time.time()
         if current_time - self.__start_time <= 3:  # 3 seconds duration
 
@@ -232,8 +234,8 @@ class Kart(Physics):
             self._ac=0
             self._angle_velocity=0
 
-
-            # Reset the kart, used for IA training
+            
+            # Reset the kart, used for IA training (Activate if AI is you want to train the AI only)
             # self.new_state=self.get_state(track_string)
             # if time.time() - self.__start_time >= 120:
             #          initial_position = [50, 50]
